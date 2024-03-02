@@ -1,6 +1,6 @@
 class CreateHomes < ActiveRecord::Migration[7.1]
   def change
-    create_table :homes do |t|
+    create_table :homes, if_not_exists: true do |t|
       t.text :description
       t.integer :year_built
       t.integer :square_feet
